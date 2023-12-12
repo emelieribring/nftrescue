@@ -1,0 +1,16 @@
+.navbar{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content:flex-end;
+    background-color: blueviolet;
+    align-items: center;
+}
+
+.connect, .disconnectBtn, .profileBtn, .backBtn{
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    position: relative;
+    right: 20px;
+}
