@@ -10,6 +10,13 @@ export default function Navbar({ profile, isConnected, connectToMetaMask, discon
       {profile && (
         <NavLink to="/"><button className='backBtn'>BACK TO HOME</button></NavLink>
       )}
+      {!profile && (
+      <div className='navbarLeft'>
+        <p className='logo'>LOGO</p>
+        <button className='aboutBtn'>About</button>
+        <button className='contactBtn'>Contact</button>
+      </div>
+      )}
       {!isConnected && (
         <button className='connect' onClick={connectToMetaMask}>
           CONNECT TO METAMASK
@@ -26,3 +33,4 @@ export default function Navbar({ profile, isConnected, connectToMetaMask, discon
     </div>
   )
 }
+

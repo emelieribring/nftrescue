@@ -10,6 +10,9 @@ export default function Profile() {
   return (
     <div className='profile'>
       <Navbar profile={Profile} isConnected={isConnected} connectToMetaMask={connectToMetaMask} disconnectFromMetaMask={disconnectFromMetaMask}/>
+      <div className='profileDogs'>
+        <h1 className='title'>My adopted dogs</h1>
+      </div>
     </div>
   )
 }

@@ -1,0 +1,32 @@
+.headerBg, .contentHeaderBg{
+    width: 100vw;
+    height: 85vh;
+    background-image: url(../../Images/backgroundNotConnected.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentHeaderBg{
+    background: linear-gradient(rgb(0, 0, 0, 0.9), rgb(0, 0, 0, 0.5)), url(../../Images/bgConnected.png);
+    background-size: cover;
+}
+
+.homeTitle{
+    color: antiquewhite;
+    font-size: 8vw;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+}
+
+.homeText{
+    color: aliceblue;
+    font-size: 2vw;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+}
+

@@ -2,15 +2,42 @@
     width: 100vw;
     height: 10vh;
     display: flex;
-    justify-content:flex-end;
-    background-color: blueviolet;
+    justify-content:space-between;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     align-items: center;
+    position: absolute;
 }
 
-.connect, .disconnectBtn, .profileBtn, .backBtn{
+.connect, .disconnectBtn, .profileBtn, .backBtn, .aboutBtn, .contactBtn{
     width: 200px;
     height: 40px;
     padding: 10px;
     position: relative;
     right: 20px;
+}
+
+.disconnectBtn{
+    margin-left: 10px;
+}
+
+.backBtn{
+    position: relative;
+    left: 10px;
+}
+
+.navbarLeft{
+    width: 50vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo{
+    color: aliceblue;
+    text-transform: uppercase;
+    position: relative;
+    left: 10px;
 }
