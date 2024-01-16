@@ -10,7 +10,8 @@
 }
 
 .contentHeaderBg{
-    background: linear-gradient(rgb(0, 0, 0, 0.9), rgb(0, 0, 0, 0.5)), url(../../Images/bgConnected.png);
+    background: url(../../Images/bgDog.jpg);
+    background-position: 80% 20%;
     background-size: cover;
 }
 

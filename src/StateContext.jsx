@@ -1,9 +1,13 @@
 // StateContext.js
 import { createContext, useContext, useState } from 'react';
+import { useEffect } from 'react';
+import Profile from './Pages/Profile/Profile';
 
 const StateContext = createContext();
 
 export const StateProvider = ({ children }) => {
+
+  
     const [isConnected, setIsConnected] = useState(false);
 
     const connectToMetaMask = async () => {
@@ -21,12 +25,15 @@ export const StateProvider = ({ children }) => {
     };
   
     const disconnectFromMetaMask = () => {
-      // Perform any cleanup or additional actions on disconnect
       setIsConnected(false);
     };  
 
+    useEffect(() => {
+      console.log(isConnected);
+    }, [isConnected]);
+
   return (
-    <StateContext.Provider value={{ isConnected, connectToMetaMask, disconnectFromMetaMask }}>
+    <StateContext.Provider value={{ Profile, isConnected, connectToMetaMask, disconnectFromMetaMask }}>
       {children}
     </StateContext.Provider>
   );

@@ -40,3 +40,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@font-face {
+  font-family: 'WOLVES'; /* Namnet du vill ge din font */
+  src: url('./Fonts/WOLVESDEMOVERSION.otf') format('truetype'); /* Sökvägen till din fontfil */
+  font-weight: normal; /* Vikt och stilinställningar om tillämpligt */
+  font-style: normal;
+}
