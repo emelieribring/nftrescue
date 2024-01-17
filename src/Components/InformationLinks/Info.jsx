@@ -1,7 +1,5 @@
 import React from 'react';
 import './info.css';
-import logoRescue from '../../Images/logoRescue.png';
-import dog from '../../Images/dog.png';
 
 export default function Info() {
   return (

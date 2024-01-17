@@ -5,7 +5,7 @@ import Info from '../../Components/InformationLinks/Info';
 import './home.css';
 import { ethers } from 'ethers';
 import { Web3Provider } from '@ethersproject/providers';
-import { useStateContext } from '../../StateContext';
+import { useStateContext } from '../../Service/StateContext';
 
 
 export default function Home() {
@@ -20,11 +20,9 @@ export default function Home() {
       const provider = new Web3Provider(window.ethereum);
       const signer = provider.getSigner();
 
-      // Replace 'MyNFT' with the actual name of your contract
-       // Replace 'MyNFT' with the actual name of your contract
-       const contractAddress = '0xff2A14bEE1ef736A07d6915C7A25CfD225e06EeC';
-       const contractABI = require('../../Service/myNFT.json').abi; // Replace with the ABI of your contract
-       const contract = new ethers.Contract(contractAddress, contractABI, signer);
+      const contractAddress = '0xff2A14bEE1ef736A07d6915C7A25CfD225e06EeC';
+      const contractABI = require('../../Service/myNFT.json').abi; // Replace with the ABI of your contract
+      const contract = new ethers.Contract(contractAddress, contractABI, signer);
 
       // Call the mint function on the contract
       const tx = await contract.mint(1, { value: ethers.parseEther('0.08') });
@@ -32,17 +30,15 @@ export default function Home() {
       console.log('Transaction Hash:', tx.hash);
   
       let receipt = null;
-      const maxAttempts = 10; // You can adjust the number of attempts
+      const maxAttempts = 10; 
   
       for (let i = 0; i < maxAttempts; i++) {
-        // Wait for a few seconds before checking again
+
         await new Promise(resolve => setTimeout(resolve, 5000));
   
-        // Get the transaction receipt
         receipt = await provider.getTransactionReceipt(tx.hash);
   
         if (receipt && receipt.confirmations !== undefined) {
-          // If confirmations information is available, break out of the loop
           break;
         }
       }

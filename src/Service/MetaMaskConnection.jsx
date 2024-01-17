@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from '../Pages/Home/Home';
 import Navbar from '../Components/Navbar/Navbar';
-import { useStateContext } from '../StateContext';
+import { useStateContext } from './StateContext';
 
 const MetaMaskConnection = () => {
   const { isConnected, connectToMetaMask, disconnectFromMetaMask } = useStateContext();
