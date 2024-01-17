@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { ethers } from 'ethers';
+import React from 'react';
 import './navbar.css';
 import { NavLink } from 'react-router-dom';
-import { StateProvider } from '../../StateContext';
+import { StateProvider } from '../../Service/StateContext';
 
 export default function Navbar({ profile, isConnected, connectToMetaMask, disconnectFromMetaMask }) {
 

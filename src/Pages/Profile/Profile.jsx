@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './profile.css';
 import Navbar from '../../Components/Navbar/Navbar';
-import { StateProvider, useStateContext } from '../../StateContext';
+import { StateProvider, useStateContext } from '../../Service/StateContext';
 import { Web3Provider } from '@ethersproject/providers';
 import Web3 from 'web3';
 

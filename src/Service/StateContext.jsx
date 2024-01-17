@@ -1,7 +1,7 @@
 // StateContext.js
 import { createContext, useContext, useState } from 'react';
 import { useEffect } from 'react';
-import Profile from './Pages/Profile/Profile';
+import Profile from '../Pages/Profile/Profile';
 
 const StateContext = createContext();
 

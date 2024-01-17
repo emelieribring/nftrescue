@@ -1,11 +1,11 @@
 import React from 'react';
 import './header.css';
-import { useStateContext } from '../../StateContext';
+import { useStateContext } from '../../Service/StateContext';
 
 
 export default function Header() {
 
-    const { isConnected, connectToMetaMask, disconnectFromMetaMask } = useStateContext();
+    const { isConnected } = useStateContext();
 
 
   return (
