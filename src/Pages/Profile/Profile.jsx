@@ -108,20 +108,18 @@ async function sendPayment() {
     return;
   }
 
-  // Check if MetaMask is connected
   if (window.ethereum && window.ethereum.selectedAddress) {
     const provider = new Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const account = await signer.getAddress();
 
     try {
-      // Use ethers.js to send a transaction
       const transaction = await signer.sendTransaction({
-        to: '0x2a5820DA8405F1CdaC333cE919B780CAcE1f695E', // Replace with the actual recipient's Ethereum address
+        to: '0x2a5820DA8405F1CdaC333cE919B780CAcE1f695E', 
         value: ethers.parseEther(amount.toString()),
       });
 
-      await transaction.wait(); // Wait for the transaction to be mined
+      await transaction.wait(); 
 
       console.log("Transaction sent:", transaction.hash);
       alert("Payment successful! Transaction Hash: " + transaction.hash);

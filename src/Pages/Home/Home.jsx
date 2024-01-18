@@ -21,7 +21,7 @@ export default function Home() {
       const signer = provider.getSigner();
 
       const contractAddress = '0xff2A14bEE1ef736A07d6915C7A25CfD225e06EeC';
-      const contractABI = require('../../Service/myNFT.json').abi; // Replace with the ABI of your contract
+      const contractABI = require('../../Service/myNFT.json').abi; 
       const contract = new ethers.Contract(contractAddress, contractABI, signer);
 
       // Call the mint function on the contract

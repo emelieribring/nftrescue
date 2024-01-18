@@ -2,6 +2,7 @@ import React from 'react';
 import './navbar.css';
 import { NavLink } from 'react-router-dom';
 import { StateProvider } from '../../Service/StateContext';
+import logo from '../../Images/logoRescue.png';
 
 export default function Navbar({ profile, isConnected, connectToMetaMask, disconnectFromMetaMask }) {
 
@@ -20,7 +21,7 @@ export default function Navbar({ profile, isConnected, connectToMetaMask, discon
         )}
         {!profile && (
         <div className='navbarLeft'>
-          <p className='logo'>LOGO</p>
+          <img src={logo} alt="logo" className='logo' />
           <button className="fancy">
             <span className="top-key"></span>
             <p className="">About</p>
