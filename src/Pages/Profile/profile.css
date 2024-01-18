@@ -1,7 +1,15 @@
 .profile{
     background: linear-gradient(to bottom, rgb(189, 165, 134), #3e2723);
     max-width: 100vw;
-    height: 400vh;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.profileDis{
+    background: linear-gradient(to bottom, rgb(189, 165, 134), #3e2723);
+    max-width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
 }
@@ -15,7 +23,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    top: 100px;
+    margin-top: 100px;
 }
 
 .title{
@@ -44,6 +52,7 @@
 .nftCardBtns{
     padding: 10px;
     display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
@@ -72,4 +81,30 @@ img{
     margin: 15px;
     text-align: justify;
     font-weight: 100;
+}
+
+.sendBtns{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    margin-bottom: -15px;
+}
+
+.send{
+    border: none;
+    background-color: #3e2723;
+    color: antiquewhite;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    margin: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#amount{
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    padding: 5px;
 }

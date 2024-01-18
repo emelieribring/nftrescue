@@ -10,7 +10,7 @@ export default function Navbar({ profile, isConnected, connectToMetaMask, discon
       <div className='navbar'>
         {profile && (
           <NavLink to="/"> 
-          <button className="fancy">
+          <button id='homeBtn' className="fancy">
             <span className="top-key"></span>
             <p className="">Home</p>
             <span className="bottom-key-1"></span>
