@@ -45,10 +45,11 @@
 }
 
 .logo{
-    color: aliceblue;
-    text-transform: uppercase;
+    width: 60px;
+    height: 60px;
     position: relative;
-    left: 10px;
+    background: none;
+    border: none;
 }
 
 #homeBtn{
