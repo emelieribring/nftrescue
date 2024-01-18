@@ -4,6 +4,7 @@ import Navbar from '../../Components/Navbar/Navbar';
 import { StateProvider, useStateContext } from '../../Service/StateContext';
 import { Web3Provider } from '@ethersproject/providers';
 import Web3 from 'web3';
+import { ethers } from 'ethers';
 
 
 export default function Profile() {
@@ -57,6 +58,7 @@ export default function Profile() {
     } catch (error) {
       console.error('Error fetching NFTs:', error);
     }
+
   };
 
   
@@ -96,10 +98,46 @@ export default function Profile() {
     }
 
   };
+// Send payment function
+async function sendPayment() {
+  const amountInput = document.getElementById("amount");
+  const amount = parseFloat(amountInput.value);
+
+  if (isNaN(amount) || amount <= 0) {
+    alert("Please enter a valid amount");
+    return;
+  }
+
+  // Check if MetaMask is connected
+  if (window.ethereum && window.ethereum.selectedAddress) {
+    const provider = new Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const account = await signer.getAddress();
+
+    try {
+      // Use ethers.js to send a transaction
+      const transaction = await signer.sendTransaction({
+        to: '0x2a5820DA8405F1CdaC333cE919B780CAcE1f695E', // Replace with the actual recipient's Ethereum address
+        value: ethers.parseEther(amount.toString()),
+      });
+
+      await transaction.wait(); // Wait for the transaction to be mined
+
+      console.log("Transaction sent:", transaction.hash);
+      alert("Payment successful! Transaction Hash: " + transaction.hash);
+    } catch (error) {
+      console.error("Error sending transaction:", error);
+      alert("Payment failed");
+    }
+  } else {
+    alert("Please connect to MetaMask");
+  }
+}
+
 
   return (
     <StateProvider>
-      <div className='profile'>
+      <div className={isConnected ? 'profile' : 'profileDis'}>
         <Navbar profile={Profile} isConnected={isConnected} connectToMetaMask={connectToMetaMask} disconnectFromMetaMask={disconnectFromMetaMask}/>
         <div className='profileDogs'>
           <h1 className='title'>My adopted dogs</h1>
@@ -111,9 +149,16 @@ export default function Profile() {
                 <img src={`${nft.image}`} />
                 <p className='nftDesc'> {nft.description}</p>
                 <div className='nftCardBtns'>
-                  <button>Send food</button>
-                  <button>Send toy</button>
-                  <button>Send candy</button>
+                  <div className='sendBtns'>
+                    <input type="text" id="amount" placeholder="Enter amount in ETH"></input>
+                    <button className='send' onClick={sendPayment}>Send food</button>
+                  </div>
+                  <div className='sendBtns'>
+                    <button className='send' onClick={sendPayment}>Send toy</button>
+                  </div>
+                  <div className='sendBtns'>
+                    <button className='send' onClick={sendPayment}>Send candy</button>
+                  </div>
                 </div>
               </div> 
             ))} 

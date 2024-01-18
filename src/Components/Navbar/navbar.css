@@ -51,6 +51,11 @@
     left: 10px;
 }
 
+#homeBtn{
+    position: relative;
+    left: 20px;
+}
+
 
 button.fancy {
     right: 20px;
